@@ -1,5 +1,5 @@
 function cambiarPagina() {
-    window.location.href = 'players-score.html';
+    window.location.href = '../players-score/players-score.html';
 }
 
 function setup() {
@@ -8,7 +8,7 @@ function setup() {
 }
 
 function createElements() {
-    let logo = createImg('../rappi-logo.png', 'Rappi Logo');
+    let logo = createImg('../imgs/rappi-logo.png', 'Rappi Logo');
     logo.style('max-width', '100%');
     logo.style('height', 'auto');
     logo.style('margin-bottom', '20px');

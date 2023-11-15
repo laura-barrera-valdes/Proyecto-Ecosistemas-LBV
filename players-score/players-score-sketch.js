@@ -7,14 +7,14 @@ function setup() {
   backButton.class('back');
   backButton.mousePressed(cambiarPagina);
 
-  let backImage = createImg('Frame.png', 'back');
+  let backImage = createImg('../imgs/Frame.png', 'back');
   backImage.size(30, 30);
   backButton.child(backImage);
 
   // Crear el encabezado
   let header = createDiv('');
   header.class('head');
-  let corona = createImg('Vector 2.png', '');
+  let corona = createImg('../imgs/Vector 2.png', '');
   corona.id('corona');
   corona.size(70, 50);
   let title = createElement('h1', 'Score');
@@ -58,7 +58,7 @@ function setup() {
     player.style('margin-top', '5%');
     player.size(600, 90);
     player.child(createElement('h1', i).class('position').style('margin-left', '5%').style('display', 'flex').style('flex', '0.2'));
-    let playerImg = createImg('image 38.png', '');
+    let playerImg = createImg('../imgs/image 38.png', '');
     playerImg.size(70, 70);
     playerImg.style('border-radius', '100px');
     playerImg.style('margin-right', '5%');
@@ -82,5 +82,5 @@ function draw() {
 }
 
 function cambiarPagina() {
-  window.location.href = 'main-menu.html';
+  window.location.href = '../main-menu/main-menu.html';
 }
