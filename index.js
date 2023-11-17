@@ -68,20 +68,18 @@ io.on('connection', (socket) => {
       socket.on('tap2', (tap) => {
         io.emit('tap2', tap);
       });
-
-    socket.on('disconnected' , () => {
-        console.log('un cliente se ha desconectado');
-
-        socket.on('keyPressed', (key) => {
+    socket.on('keyPressed', (key) => {
           if (key === 'W') {
 
           } else if (key === 'A') {
 
           } else if (key === 'S') {
 
-          } else if (key === 'D') {
-            
+           } else if (key === 'D') {
+                
           }
-        });
+         });
+    socket.on('disconnected' , () => {
+        console.log('un cliente se ha desconectado');
     });
 });
