@@ -1,4 +1,10 @@
 function cambiarPagina() {
+    window.location.href = '../../player1/index.html';
+}
+function cambiarPagina2() {
+    window.location.href = '../players-score/players-score.html';
+}
+function cambiarPagina3() {
     window.location.href = '../players-score/players-score.html';
 }
 
@@ -20,7 +26,7 @@ function createElements() {
     startButton.mousePressed(cambiarPagina);
 
     let playersScoreButton = createButton('Players Score');
-    playersScoreButton.mousePressed(cambiarPagina);
+    playersScoreButton.mousePressed(cambiarPagina2);
 
     let quitButton = createButton('Quit');
     quitButton.mousePressed(cambiarPagina);
