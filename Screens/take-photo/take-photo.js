@@ -18,8 +18,8 @@ function setup() {
   let imageNumber = createDiv('');
   imageNumber.class('photo');
   let profileImage = createImg('https://vivolabs.es/wp-content/uploads/2022/03/perfil-hombre-vivo.png', '');
-  profileImage.size(100, 100);
-  profileImage.style('border-radius', '100px');
+  profileImage.size(200, 200);
+  profileImage.style('border-radius', '200px');
   profileImage.style('border', '4px solid #002046bf');
   
   // Agregar elementos al DOM
