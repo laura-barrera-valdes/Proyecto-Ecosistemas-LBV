@@ -14,10 +14,12 @@ function movePlay() {
 }
 
 function createElements() {
+  //createCapture(VIDEO);
   let backButton = createButton("");
   backButton.class("back");
   backButton.mousePressed(backMain);
 
+  // Crear botón de regresar
   let backImage = createImg("../imgs/Frame.png", "back");
   backImage.size(30, 30);
   backButton.child(backImage);
@@ -34,10 +36,7 @@ function createElements() {
   // Crear elemento de imagen
   let imageNumber = createDiv("");
   imageNumber.class("photo");
-  let profileImage = createImg(
-    "https://vivolabs.es/wp-content/uploads/2022/03/perfil-hombre-vivo.png",
-    ""
-  );
+  let profileImage = createCapture(VIDEO);
 
   // Agregar elementos al DOM
   document.body.appendChild(backButton.elt);
@@ -50,17 +49,17 @@ function createElements() {
   let menuDiv = createDiv("");
   menuDiv.class("menu-buttons");
 
-  let startButton = createButton("Take a Photo");
-  startButton.mousePressed(movePlay);
-  startButton.class("buttonPhoto");
+  let takePhotoButton = createButton("Take a Photo");
+  takePhotoButton.mousePressed(movePlay);
+  takePhotoButton.class("buttonPhoto");
 
-  let playersScoreButton = createButton("Select from Gallery");
-  playersScoreButton.mousePressed(movePlay);
-  playersScoreButton.class("buttonPhoto");
+  let selectFromGallery = createButton("Select from Gallery");
+  selectFromGallery.mousePressed(movePlay);
+  selectFromGallery.class("buttonPhoto");
 
   //menuDiv.parent("body");
-  startButton.parent(menuDiv);
-  playersScoreButton.parent(menuDiv);
+  takePhotoButton.parent(menuDiv);
+  selectFromGallery.parent(menuDiv);
 
   let logoDiv = createDiv("");
   logoDiv.class("logo-div");

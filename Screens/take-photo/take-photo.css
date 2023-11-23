@@ -30,18 +30,19 @@ h1 {
 }
 
 .photo {
-  color: #fe3f23;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px;
+  justify-content: center;
 }
 
-.photo img {
+video {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  border: 5px solid #002046bf;
   width: 200px;
   height: 200px;
-  border-radius: 200px;
-  border: 5px solid #002046bf;
+  border-radius: 100px;
+  margin-block: 20px;
 }
 
 .nombre {
@@ -72,7 +73,7 @@ h1 {
 }
 
 .buttonPhoto:hover {
-  border: 2px solid #FF4B3D;
+  border: 2px solid #ff4b3d;
   background-color: #fff;
   color: #ff4b3d;
 }
