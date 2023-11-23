@@ -38,10 +38,8 @@ h1 {
 }
 
 .photo img {
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
-  border: 5px solid #002046bf;
+  width: 10%;
+  height: 10%;
 }
 
 .nombre {
@@ -72,7 +70,7 @@ h1 {
 }
 
 .buttonPhoto:hover {
-  border: 2px solid #FF4B3D;
+  border: 2px solid #ff4b3d;
   background-color: #fff;
   color: #ff4b3d;
 }
