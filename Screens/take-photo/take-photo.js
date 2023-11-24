@@ -13,6 +13,20 @@ function moveMaze() {
   window.location.href = "../maze/maze.html";
 }
 
+function usePhoto(video = undefined) {
+  /*
+  if (video == undefined) {
+    return;
+  }
+  
+  let nuevaImg = createCapture(VIDEO);
+  
+  let photoDiv = document.querySelector(".photo"); //seleccionar un objeto del documento
+  photoDiv.innerHTML = nuevaImg;
+  console.log(nuevaImg);
+  console.log(photoDiv);*/
+}
+
 function createElements() {
   let backButton = createButton("");
   backButton.class("back");
