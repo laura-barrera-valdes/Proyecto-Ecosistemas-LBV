@@ -9,12 +9,11 @@ function backMain() {
   window.location.href = "../main-menu/main-menu.html";
 }
 
-function movePlay() {
+function moveMaze() {
   window.location.href = "../maze/maze.html";
 }
 
 function createElements() {
-  //createCapture(VIDEO);
   let backButton = createButton("");
   backButton.class("back");
   backButton.mousePressed(backMain);
@@ -33,9 +32,9 @@ function createElements() {
     "Take a photo to identify your self in the competition."
   );
 
-  // Crear elemento de imagen
-  let imageNumber = createDiv("");
-  imageNumber.class("photo");
+  // Crear elemento de imagen con captura de video
+  let photoDiv = createDiv("");
+  photoDiv.class("photo");
   let profileImage = createCapture(VIDEO);
 
   // Agregar elementos al DOM
@@ -43,23 +42,23 @@ function createElements() {
   document.body.appendChild(header.elt);
   header.child(title);
   header.child(number);
-  document.body.appendChild(imageNumber.elt);
-  imageNumber.child(profileImage);
+  document.body.appendChild(photoDiv.elt);
+  photoDiv.child(profileImage);
 
   let menuDiv = createDiv("");
   menuDiv.class("menu-buttons");
 
-  let takePhotoButton = createButton("Take a Photo");
-  takePhotoButton.mousePressed(movePlay);
-  takePhotoButton.class("buttonPhoto");
+  let takePhoto = createButton("Take a Photo");
+  takePhoto.mousePressed(usePhoto(profileImage));
+  takePhoto.class("buttonPhoto");
 
-  let selectFromGallery = createButton("Select from Gallery");
-  selectFromGallery.mousePressed(movePlay);
-  selectFromGallery.class("buttonPhoto");
+  let nextScreen = createButton("Next");
+  nextScreen.mousePressed(moveMaze);
+  nextScreen.class("buttonPhoto");
 
   //menuDiv.parent("body");
-  takePhotoButton.parent(menuDiv);
-  selectFromGallery.parent(menuDiv);
+  takePhoto.parent(menuDiv);
+  nextScreen.parent(menuDiv);
 
   let logoDiv = createDiv("");
   logoDiv.class("logo-div");
