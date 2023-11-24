@@ -1,4 +1,4 @@
-let FRAME = 210;
+let FRAME = 200;
 
 function setup() {
   //noCanvas();
