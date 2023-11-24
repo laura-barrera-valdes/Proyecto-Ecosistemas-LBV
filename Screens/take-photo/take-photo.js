@@ -1,6 +1,18 @@
+let FRAME = 210;
+
 function setup() {
-  noCanvas();
+  //noCanvas();
   createElements();
+
+  let photoDiv = document.querySelector(".photo");
+  canvasCreation(photoDiv);
+}
+
+function canvasCreation(container) {
+  createCanvas(FRAME, FRAME); // Creamos el canvas
+  let pCanvas = document.querySelector(".p5Canvas"); // seleccionamos el canvas
+  pCanvas.classList.add("my-auto", "hidden");
+  container.appendChild(pCanvas); // agregamos el canvas a el contendor
 }
 
 function draw() {}
@@ -13,19 +25,19 @@ function moveMaze() {
   window.location.href = "../maze/maze.html";
 }
 
-function usePhoto(video = undefined) {
-  /*
+let usePhoto = (video = undefined) => {
   if (video == undefined) {
     return;
   }
-  
-  let nuevaImg = createCapture(VIDEO);
-  
-  let photoDiv = document.querySelector(".photo"); //seleccionar un objeto del documento
-  photoDiv.innerHTML = nuevaImg;
-  console.log(nuevaImg);
-  console.log(photoDiv);*/
-}
+
+  let nuevaImg = video.get(); // .get() hace un pantallazo del video y devuelve un objeto de tipo Image
+  nuevaImg.resize(FRAME, FRAME); // Reducimos el tamaño de la imagen
+  image(nuevaImg, 0, 0); //Colocamos la imagen en el canvas principal
+  video.hide(); // Ocultamos el video
+  let pCanvas = document.querySelector(".p5Canvas");
+  pCanvas.classList.remove("hidden");
+  console.log(video);
+};
 
 function createElements() {
   let backButton = createButton("");
@@ -48,6 +60,7 @@ function createElements() {
 
   // Crear elemento de imagen con captura de video
   let photoDiv = createDiv("");
+
   photoDiv.class("photo");
   let profileImage = createCapture(VIDEO);
 
@@ -58,12 +71,15 @@ function createElements() {
   header.child(number);
   document.body.appendChild(photoDiv.elt);
   photoDiv.child(profileImage);
+  //photoDiv.child(p5Canvas);
 
   let menuDiv = createDiv("");
   menuDiv.class("menu-buttons");
 
   let takePhoto = createButton("Take a Photo");
-  takePhoto.mousePressed(usePhoto(profileImage));
+  takePhoto.mousePressed((e) => {
+    usePhoto(profileImage);
+  });
   takePhoto.class("buttonPhoto");
 
   let nextScreen = createButton("Next");
