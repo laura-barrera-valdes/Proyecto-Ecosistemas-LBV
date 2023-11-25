@@ -1,3 +1,5 @@
+import { SerialPort } from 'serialport'
+import { ReadlineParser } from 'serialport'
 import express from 'express';
 import cors from 'cors'
 import { Server } from 'socket.io';
@@ -32,6 +34,14 @@ const io = new Server(httpServer, {
         methods: ["GET","POST"]
     }
 });
+
+const protocolConfiguration = {
+  path: 'COM3',
+  baudRate: 9600
+}
+
+const port = new SerialPort(protocolConfiguration);
+const parser = port.pipe(new ReadlineParser());
 
 
 io.on('connection', (socket) => {
@@ -82,4 +92,16 @@ io.on('connection', (socket) => {
     socket.on('disconnected' , () => {
         console.log('un cliente se ha desconectado');
     });
+    //Arduino ////////////////////////////////////////////////////////////
+
+    parser.on('data', (data) => {
+      console.log("data", data);
+      io.emit('input', {"key": data});
+    });
+
+    // list serial ports:
+    SerialPort.list().then(
+      ports => ports.forEach(port => console.log(port.path)), //COM3
+      err => console.log(err)
+    )
 });

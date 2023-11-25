@@ -3,7 +3,15 @@ const int pinBotonIzquierda = 3;
 const int pinBotonAbajo = 4;
 const int pinBotonDerecha = 5;
 
+int w = 87;
+int a = 65;
+int s = 83;
+int d = 68;
+
 char personaje = '*';
+
+// Function prototype
+void moverPersonaje(char direccion);
 
 void setup() {
   pinMode(pinBotonArriba, INPUT);
@@ -22,21 +30,22 @@ void loop() {
   int estadoBotonDerecha = digitalRead(pinBotonDerecha);
 
   // Enviar comandos al Arduino a través del puerto serie
-   if (estadoBotonArriba == HIGH) {
-    Serial.write('W');
+  if (estadoBotonArriba == HIGH) {
+
+    Serial.println(w);
   }
   if (estadoBotonIzquierda == HIGH) {
-    Serial.write('A');
+
+    Serial.println(a);
   }
   if (estadoBotonAbajo == HIGH) {
-    Serial.write('S');
+
+    Serial.println(s);
   }
   if (estadoBotonDerecha == HIGH) {
-    Serial.write('D');
+
+    Serial.println(d);
   }
-  // Mover el personaje en función de los comandos recibidos
-  if (Serial.available() > 0) {
-    char comando = Serial.read();
-    moverPersonaje(comando);
-  }
+
+  delay(800);
 }

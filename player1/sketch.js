@@ -298,8 +298,6 @@ socket.emit('position1', position);
 }
 
 
-
-
 function keyPressed(){
   if((key === 'a' || key === 'A' || keyCode == LEFT_ARROW) && posx > 0 && move===true){
     if(laberinto[posx-1][posy] != 0){
@@ -336,7 +334,6 @@ function keyPressed(){
     if(laberinto[posx][posy+1] != 0){
       posy += 1;
       socket.emit('keyPressed', 'S');
-
     }
   }
   if((key === 's' || key === 'S' || keyCode == DOWN_ARROW) && move===true){
@@ -432,3 +429,72 @@ function cambiarPagina() {
   window.location.href = '../Screens/Congrats-screen/p5.html';
 }
 
+
+socket.on('input', (input) => {
+  console.log(input);
+  switch (parseInt(input.key)) {
+
+    case 87: 
+
+    if(posy > 0 && move===true){
+
+      if(laberinto[posx][posy-1] != 0){
+        posy -= 1;
+
+      }
+    }
+    if(move===true){
+        apuntando=0;
+    }
+
+    break;
+
+    case 83: 
+
+    if(posy < tcanvas-t && move===true){
+
+      if(laberinto[posx][posy+1] != 0){
+        posy += 1;
+
+      }
+    }
+    if(move===true){
+        apuntando=2;
+    }
+
+    break;
+
+    case 65: 
+
+    if(posx > 0 && move===true){
+
+      if(laberinto[posx-1][posy] != 0){
+        posx -= 1;
+
+      }
+    }
+    if(move===true){
+        apuntando=3;
+    }
+
+    break;
+
+    case 68: 
+
+    if(posx < tcanvas-t && move===true){
+
+      if(laberinto[posx+1][posy] != 0){
+        posx += 1;
+      }
+    }
+    if(move===true){
+        apuntando=1;
+    }
+
+    break;
+
+    default:
+      console.log("nop");
+    break;
+  }
+})

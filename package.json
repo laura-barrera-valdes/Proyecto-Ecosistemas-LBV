@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/ECO232/parcial-02-IsaakuTK#readme",
   "dependencies": {
+    "@serialport/stream": "^12.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "node": "^21.1.0",
     "nodemon": "^3.0.1",
+    "serialport": "^12.0.0",
     "socket.io": "^4.7.2"
   }
 }

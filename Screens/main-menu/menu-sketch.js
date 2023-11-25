@@ -1,5 +1,6 @@
 function cambiarPagina() {
-    window.location.href = '../../player1/index.html';
+    window.location.href = '../take-photo/take-photo.html';
+    //window.location.href = '../../player1/index.html';
 }
 function cambiarPagina2() {
     window.location.href = '../players-score/players-score.html';
