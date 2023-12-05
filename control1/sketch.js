@@ -42,6 +42,18 @@ function mouseClicked() {
   }
 }
 
+function touchStarted() {
+  if (
+    mouseX >= boton.x &&
+    mouseX <= boton.x + boton.size &&
+    mouseY >= boton.y &&
+    mouseY <= boton.y + boton.size
+  ) {
+    yes = true;
+    socket.emit("tap1", yes);
+  }
+}
+
 function seleccion() {
   if (
     mouseX >= boton.x &&
