@@ -1,7 +1,6 @@
 {
   "name": "parcial-02-isaakutk",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -26,5 +25,7 @@
     "nodemon": "^3.0.1",
     "serialport": "^12.0.0",
     "socket.io": "^4.7.2"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
