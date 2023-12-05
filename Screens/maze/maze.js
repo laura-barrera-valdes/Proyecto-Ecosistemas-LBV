@@ -33,7 +33,6 @@ function createElements() {
   imageNumber.class("photo");
   let mapimg = createImg("../imgs/map.png", "Rappi Logo");
 
-
   // Agregar elementos al DOM
   document.body.appendChild(backButton.elt);
   document.body.appendChild(header.elt);
